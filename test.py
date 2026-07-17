@@ -136,7 +136,7 @@ class matrix:
                 current_row += 1
 
         for row_index, row in enumerate(reversed(reduced.mtrx)):
-            print("hi")
+            
             pass
                                         
             
