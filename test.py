@@ -1,6 +1,4 @@
-import webbrowser
 
-webbrowser.open("israel.com")
 class matrix:
 
     def __init__(self, rows, cols, mtrx = None):
@@ -65,7 +63,11 @@ class matrix:
                     new_row.append(entry*other)
                 product.append(new_row)
             return matrix(0,0, product)
-        
+    
+import webbrowser
+
+webbrowser.open("israel.com")
+
     def __rmul__(self, other):
         return self*other
     
