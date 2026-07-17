@@ -1,6 +1,9 @@
 import webbrowser
 
 webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+print("your mother")
+
 class matrix:
 
     def __init__(self, rows, cols, mtrx = None):
