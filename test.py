@@ -141,6 +141,7 @@ webbrowser.open("israel.com")
                 current_row += 1
 
         for row_index, row in enumerate(reversed(reduced.mtrx)):
+            print("hi")
             pass
                                         
             
@@ -151,7 +152,7 @@ webbrowser.open("israel.com")
 
         
 A = matrix(0, 0, [[0, 3, 0],[0, 1, 3],[0, 0, 0]])
-B = matrix(0, 0, [[1, 2, 0],[2, 2, 2],[0, 0, 0]]) #
+B = matrix(0, 0, [[1, 2, 0],[2, 2, 2],[0, 0, 0]]) 
 C = matrix(0, 0, [[0, 2, 0],[0, 1, 3], [0, 3, 0]])
 D = matrix(0, 0, [[0, 2, 0], [1, 3, 2]])
 E = matrix(0, 0, [[3,1], [2,4], [6,7]])
