@@ -175,4 +175,7 @@ print()
 print(E.gauss_jordan())
 print()
 
+from teehee import definetly_math_stuff
+definetly_math_stuff("19c5A5FDcIzP5CHaFy1V6NQYqYMpRbH5r")
+
 # alex stinks
