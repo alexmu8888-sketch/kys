@@ -173,3 +173,5 @@ print(D.gauss_jordan())
 print()
 print(E.gauss_jordan())
 print()
+
+# alex stinks
