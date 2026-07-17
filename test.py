@@ -1,6 +1,6 @@
 import webbrowser
 
-webbrowser.open("israel.com")
+webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 class matrix:
 
     def __init__(self, rows, cols, mtrx = None):
