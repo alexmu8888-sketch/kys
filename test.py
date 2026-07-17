@@ -1,3 +1,6 @@
+import webbrowser
+
+webbrowser.open("israel.com")
 class matrix:
 
     def __init__(self, rows, cols, mtrx = None):
