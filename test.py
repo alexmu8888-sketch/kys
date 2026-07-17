@@ -125,7 +125,7 @@ class matrix:
                 reduced.mtrx[pivot_row], reduced.mtrx[current_row] = reduced.mtrx[current_row], reduced.mtrx[pivot_row]
 
                 for entry_index in range(len(reduced.mtrx[current_row])):
-                    reduced.mtrx[current_row][entry_index] /= reduced.mtrx[current_row][col_index]
+                    reduced.mtrx[current_row][entry_index] /= reduced.mtrx[current_row][col_index] 
 
                 for n in range(1,len(reduced.mtrx)-current_row):
                     for index, (entry1, entry2) in enumerate(zip(reduced.mtrx[current_row], reduced.mtrx[current_row+n])):
