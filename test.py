@@ -97,7 +97,7 @@ class matrix:
     def gauss_jordan(self):
         new_list = []
 
-        for row in self.mtrx:
+        for row in self.mtrx: #new matrix variable "reduced" so we dont modify the original matrix
             new_row = []
             for entry in row:
                 new_row.append(entry)
@@ -106,36 +106,37 @@ class matrix:
 
         reduced = matrix(0,0, new_list)
 
-        current_row = 0
+        current_row = 0 #which row are we at rn
 
-        for col_index in range(reduced.cols):
+        for col_index in range(reduced.cols): #go through each column
                
             hi = 0
             pivot_row = 0
             
       
-            for row_index, row in enumerate(reduced.mtrx[current_row:], start=current_row):
+            for row_index, row in enumerate(reduced.mtrx[current_row:], start=current_row): #for that column, look at the entry of each row corresponding to that column
 
-                if abs(row[col_index]) > hi: 
+                if abs(row[col_index]) > hi: #find the largest entry
                     hi = row[col_index]
-                    pivot_row = row_index
+                    pivot_row = row_index #now that row is the pivot row
             
-            if hi != 0:
+            if hi != 0: #if you found a pivot
 
-                reduced.mtrx[pivot_row], reduced.mtrx[current_row] = reduced.mtrx[current_row], reduced.mtrx[pivot_row]
+                reduced.mtrx[pivot_row], reduced.mtrx[current_row] = reduced.mtrx[current_row], reduced.mtrx[pivot_row] #move the pivot row to the top so that current row IS the pivot row
 
-                for entry_index in range(len(reduced.mtrx[current_row])):
-                    reduced.mtrx[current_row][entry_index] /= reduced.mtrx[current_row][col_index] 
+                for entry_index in range(len(reduced.mtrx[current_row])): #divide pivot by itself so that its 1 and everything else is divided by it too
+                    divisor = reduced.mtrx[current_row][col_index]
+                    reduced.mtrx[current_row][entry_index] /= divisor
 
-                for n in range(1,len(reduced.mtrx)-current_row):
+                for n in range(1,len(reduced.mtrx)-current_row): #now we substract every entry under the pivot (1) so that it become 0
                     for index, (entry1, entry2) in enumerate(zip(reduced.mtrx[current_row], reduced.mtrx[current_row+n])):
 
                         multiple = reduced.mtrx[current_row+n][col_index]
                         reduced.mtrx[current_row+n][index] -= multiple*entry1
 
-                current_row += 1
+                current_row += 1 #since there was a pivot, we gotta move up the current row so that we dont include it in the next search for pivot row
 
-        for row_index, row in enumerate(reversed(reduced.mtrx)):
+        for row_index, row in enumerate(reversed(reduced.mtrx)): #lowkey kys
             
             pass
                                         
