@@ -101,7 +101,6 @@ class matrix:
             new_row = []
             for entry in row:
                 new_row.append(entry)
-
             new_list.append(new_row)
 
         reduced = matrix(0,0, new_list)
@@ -121,16 +120,16 @@ class matrix:
                     pivot_row = row_index #now that row is the pivot row
             
             if hi != 0: #if you found a pivot
+                
 
                 reduced.mtrx[pivot_row], reduced.mtrx[current_row] = reduced.mtrx[current_row], reduced.mtrx[pivot_row] #move the pivot row to the top so that current row IS the pivot row
 
+                divisor = reduced.mtrx[current_row][col_index] #make the pivot entry the divisor
                 for entry_index in range(len(reduced.mtrx[current_row])): #divide pivot by itself so that its 1 and everything else is divided by it too
-                    divisor = reduced.mtrx[current_row][col_index]
                     reduced.mtrx[current_row][entry_index] /= divisor
 
                 for n in range(1,len(reduced.mtrx)-current_row): #now we substract every entry under the pivot (1) so that it become 0
                     for index, (entry1, entry2) in enumerate(zip(reduced.mtrx[current_row], reduced.mtrx[current_row+n])):
-
                         multiple = reduced.mtrx[current_row+n][col_index]
                         reduced.mtrx[current_row+n][index] -= multiple*entry1
 
